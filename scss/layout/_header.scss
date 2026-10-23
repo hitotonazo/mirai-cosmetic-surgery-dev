@@ -20,7 +20,7 @@
 
   &__logo {
     display: block;
-    width: clamp(110px, 36vw, 190px);
+    width: clamp(110px, 32vw, 190px);
     flex: 0 1 auto;
   }
 
@@ -78,6 +78,7 @@
     padding: 11px 9px;
     border: 1px solid v.$color-line;
     border-radius: 50%;
+    color: v.$color-text;
     background: transparent;
     cursor: pointer;
     place-content: center;
@@ -87,7 +88,7 @@
   &__toggle span {
     width: 20px;
     height: 1px;
-    background: currentColor;
+    background: v.$color-text;
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
@@ -160,6 +161,16 @@
 
     &__toggle {
       display: none;
+    }
+  }
+
+  @media (max-width: 374px) {
+    &__actions {
+      gap: 4px;
+    }
+
+    &__toggle {
+      padding-inline: 8px;
     }
   }
 }
