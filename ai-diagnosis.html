@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FIORNEA FACEの質問式シミュレーション診断">
+  <title>AI顔診断｜FIORNEA美容皮膚科・美容外科</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&amp;family=Sorts+Mill+Goudy:ital@0;1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="modules/site-alteration/site-alteration.css">
+  <script src="assets/js/common.js" defer></script>
+  <script src="modules/site-alteration/site-alteration.js" defer></script>
+  <script src="modules/site-alteration/debug-panel.js" defer></script>
+  <script src="assets/js/arg-anomaly-ui.js" defer></script>
+  <script src="assets/js/game.js" defer></script>
+  <script src="assets/js/ai-diagnosis.js" defer></script>
+</head>
+<body class="p-diagnosis">
+  <a class="c-skip-link" href="#main-content">本文へ移動</a>
+  <header class="c-site-header site-header" data-site-header="">
+    <div class="c-site-header__inner l-container">
+      <a class="c-site-header__logo" href="index.html" aria-label="FIORNEA トップページ"><img src="assets/images/logo-main.png" width="1880" height="495" alt="FIORNEA 美容皮膚科・美容外科"></a>
+      <nav class="c-site-header__nav" id="global-navigation" aria-label="メインナビゲーション" data-navigation="">
+        <ul class="c-site-header__list">
+          <li>
+            <a href="index.html">TOP</a>
+          </li>
+          <li>
+            <a href="ai-diagnosis.html" aria-current="page">AI顔診断</a>
+          </li>
+          <li>
+            <a href="cases.html">症例紹介</a>
+          </li>
+          <li>
+            <a href="ai-technology.html">AI技術への取り組み</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="c-site-header__actions">
+        <button class="c-reset" type="button" data-exploration-reset="">探索リセット</button>
+      </div>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <header class="c-page-title">
+      <div class="l-container">
+        <p class="c-eyebrow">FIORNEA FACE</p>
+        <h1>AI顔診断</h1>
+        <p>質問に答えて、顔イメージと美容プランを確認する簡易シミュレーションです。</p>
+      </div>
+    </header>
+    <section class="l-section">
+      <div class="l-container l-container--reading">
+        <div class="p-diagnosis__intro">
+          <p>当院のAI顔診断では、お顔の写真をアップロードいただくことで、顔のバランスや特徴を分析し、お客様に適した美容医療をご提案します。</p>
+          <p>また、お顔の写真のアップロードに抵抗がある方や、まずは気軽に診断を体験したい方に向けて、写真を使用しない「シミュレーション診断」もご用意しています。</p>
+          <p>シミュレーション診断では、いくつかの質問に回答いただくことで、回答内容に基づいた顔のイメージと美容プランをご確認いただけます。</p>
+          <p class="c-note">※シミュレーション診断はイメージを用いた簡易診断であり、実際の顔の分析結果とは異なります。</p>
+        </div>
+      </div>
+    </section>
+    <section class="l-section p-diagnosis__simulation" aria-labelledby="simulation-title">
+      <div class="l-container l-container--reading">
+        <div class="c-section-heading">
+          <p class="c-eyebrow">SIMULATION</p>
+          <h2 id="simulation-title">シミュレーション診断</h2>
+        </div>
+        <div class="p-diagnosis-app" data-diagnosis-app="">
+          <div class="p-diagnosis-app__progress" data-question-progress="">
+            <span data-question-number="">QUESTION 1 / 4</span>
+            <div aria-hidden="true"><i data-question-bar>&nbsp;</i></div>
+          </div>
+          <form data-diagnosis-form="">
+            <fieldset class="p-diagnosis-question" data-question="gender">
+              <legend><span>Q1</span>診断する顔のタイプ</legend><label><input type="radio" name="gender" value="female"><span>女性タイプ</span></label><label><input type="radio" name="gender" value="male"><span>男性タイプ</span></label>
+            </fieldset>
+            <fieldset class="p-diagnosis-question" data-question="mood" hidden="">
+              <legend><span>Q2</span>理想とする雰囲気</legend><label><input type="radio" name="mood" value="natural"><span>自然で親しみやすい</span></label><label><input type="radio" name="mood" value="glamorous"><span>華やかで印象的</span></label><label><input type="radio" name="mood" value="intelligent"><span>知的で落ち着いた</span></label>
+            </fieldset>
+            <fieldset class="p-diagnosis-question" data-question="area" hidden="">
+              <legend><span>Q3</span>特に気になる部位</legend><label><input type="radio" name="area" value="eyes"><span>目元</span></label><label><input type="radio" name="area" value="nose-mouth"><span>鼻・口元</span></label><label><input type="radio" name="area" value="face-line"><span>フェイスライン</span></label>
+            </fieldset>
+            <fieldset class="p-diagnosis-question" data-question="change" hidden="">
+              <legend><span>Q4</span>希望する変化</legend><label><input type="radio" name="change" value="subtle"><span>自然な変化</span></label><label><input type="radio" name="change" value="clear"><span>はっきりとした変化</span></label>
+            </fieldset>
+            <div class="p-diagnosis-app__actions">
+              <button class="c-button c-button--secondary" type="button" data-question-back="" hidden="">前の質問へ戻る</button><button class="c-button" type="button" data-question-next="" disabled>次の質問へ</button>
+            </div>
+          </form>
+          <section class="p-diagnosis-analysis" data-analysis="" hidden="" aria-live="polite">
+            <img class="p-diagnosis-analysis__icon" src="assets/images/diagnosis-face-icon.png" alt="診断中の顔イラスト">
+            <h2>診断中です</h2>
+            <p data-analysis-label="">回答データを解析中</p>
+            <div class="p-diagnosis-analysis__bar" role="progressbar" aria-label="診断の進捗" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-analysis-progress=""><i>&nbsp;</i></div><strong data-analysis-percent="">0%</strong>
+          </section>
+          <section class="p-diagnosis-result" data-diagnosis-result="" hidden="" tabindex="-1">
+            <div class="c-section-heading">
+              <p class="c-eyebrow">RESULT</p>
+              <h2>シミュレーション診断結果</h2>
+            </div>
+            <p class="c-note">回答内容に基づくイメージ結果です。実際のお顔を分析・評価したものではありません。</p>
+            <div class="p-diagnosis-result__grid">
+              <img data-result-image="" src="assets/images/ai-face-female-01.jpg" alt="診断結果の顔イメージ">
+              <dl>
+                <dd>
+                  <div>
+                    <dl>
+                      <dt>診断顔タイプ</dt>
+                      <dd data-result-type=""></dd>
+                    </dl>
+            </div>
+            <div class="p-diagnosis-anomaly" data-anomaly-panel="phase1" hidden aria-live="assertive">
+              <p class="p-diagnosis-anomaly__label">社会適合度</p>
+              <a class="p-diagnosis-anomaly__trigger" href="social-score-spec.html" data-anomaly-link="phase1">選考対象外</a>
+              <p>選択された顔タイプの評価結果を表示しています。</p>
+            </div>
+                  <div>
+                    <dl>
+                      <dt>顔バランス</dt>
+                      <dd data-result-balance=""></dd>
+                    </dl>
+                  </div>
+                  <div>
+                    <dl>
+                      <dt>印象評価</dt>
+                      <dd data-result-impression=""></dd>
+                    </dl>
+                  </div>
+                  <div>
+                    <dl>
+                      <dt>推奨施術</dt>
+                      <dd data-result-treatment=""></dd>
+                    </dl>
+                  </div>
+                </dd>
+              </dl>
+            </div><button class="c-button c-button--secondary" type="button" data-diagnosis-restart="">もう一度診断する</button>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="c-site-footer site-footer">
+    <div class="c-site-footer__inner l-container">
+      <a class="c-site-footer__logo" href="index.html" aria-label="FIORNEA トップページ"><img src="assets/images/logo-main.png" width="1880" height="495" alt="FIORNEA 美容皮膚科・美容外科"></a>
+      <nav class="c-site-footer__nav" aria-label="フッターナビゲーション">
+        <ul>
+          <li>
+            <a href="index.html">TOP</a>
+          </li>
+          <li>
+            <a href="ai-diagnosis.html">AI顔診断</a>
+          </li>
+          <li>
+            <a href="cases.html">症例紹介</a>
+          </li>
+          <li>
+            <a href="ai-technology.html">AI技術への取り組み</a>
+          </li>
+        </ul>
+      </nav>
+      <p class="c-site-footer__notice">※このWebサイトの内容はフィクションであり、実在の人物・団体とは一切関係ありません。</p>
+      <p class="c-site-footer__copyright"><small>©ぺいぽぴー</small></p>
+    </div>
+  </footer>
+</body>
+</html>

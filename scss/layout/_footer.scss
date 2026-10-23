@@ -1,0 +1,53 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixin" as m;
+
+.c-site-footer {
+  padding-block: 48px 24px;
+  color: v.$color-text;
+  border-top: 1px solid v.$color-line;
+  background: v.$color-ivory;
+
+  &__inner {
+    display: grid;
+    justify-items: center;
+    gap: 28px;
+    text-align: center;
+  }
+
+  &__logo {
+    width: min(210px, 64vw);
+  }
+
+  &__logo img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+  }
+
+  &__nav a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  &__notice,
+  &__copyright {
+    font-size: 14px;
+  }
+
+  &__notice {
+    max-width: 680px;
+  }
+
+  @include m.mq(lg) {
+    padding-block: 64px 28px;
+  }
+}

@@ -1,0 +1,109 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background: v.$color-ivory;
+}
+
+html.is-menu-locked {
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  overflow-x: clip;
+  color: v.$color-text;
+  background: v.$color-white;
+  font-family: v.$font-ja;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
+
+.c-eyebrow {
+  color: v.$color-accent;
+  font-family: v.$font-en;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+}
+
+.c-note {
+  font-size: 14px;
+}
+
+.c-text-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: v.$color-accent;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  @include m.focus-ring;
+}
+
+.u-font-en {
+  font-family: v.$font-en;
+  letter-spacing: 0.06em;
+}
+
+.c-skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 8px;
+  left: 8px;
+  padding: 8px 16px;
+  transform: translateY(-160%);
+  background: v.$color-white;
+}
+
+.c-skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

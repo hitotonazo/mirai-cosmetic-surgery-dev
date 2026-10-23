@@ -1,0 +1,165 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixin" as m;
+
+.c-site-header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  min-height: v.$header-height-sp;
+  border-bottom: 1px solid rgba(v.$color-line, 0.8);
+  background: rgba(v.$color-white, 0.96);
+  backdrop-filter: blur(12px);
+  isolation: isolate;
+
+  &__inner {
+    display: flex;
+    min-height: v.$header-height-sp;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__logo {
+    display: block;
+    width: clamp(110px, 36vw, 190px);
+    flex: 0 1 auto;
+  }
+
+  &__logo img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__nav {
+    position: fixed;
+    z-index: -1;
+    top: v.$header-height-sp;
+    right: 0;
+    left: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    max-height: calc(100svh - v.$header-height-sp);
+    padding: 24px 20px 36px;
+    transform: translateY(-12px);
+    opacity: 0;
+    border-top: 1px solid v.$color-line;
+    background: v.$color-white;
+    pointer-events: none;
+    transition: visibility 0.25s, transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  &__list {
+    display: grid;
+  }
+
+  &__list a {
+    display: flex;
+    min-height: 52px;
+    align-items: center;
+    border-bottom: 1px solid v.$color-line;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  &__list a[aria-current="page"] {
+    color: v.$color-accent;
+  }
+
+  &__actions {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__toggle {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    padding: 11px 9px;
+    border: 1px solid v.$color-line;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    place-content: center;
+    gap: 5px;
+  }
+
+  &__toggle span {
+    width: 20px;
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  &.is-menu-open {
+    position: sticky;
+    top: 0;
+    .c-site-header__nav {
+      visibility: visible;
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .c-site-header__toggle span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .c-site-header__toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .c-site-header__toggle span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+
+  @include m.mq(lg) {
+    min-height: v.$header-height-pc;
+
+    &__inner {
+      min-height: v.$header-height-pc;
+      gap: clamp(20px, 3vw, 48px);
+    }
+
+    &__logo {
+      width: clamp(180px, 16vw, 220px);
+    }
+
+    &__nav {
+      position: static;
+      z-index: auto;
+      visibility: visible;
+      overflow: visible;
+      max-height: none;
+      margin-left: auto;
+      padding: 0;
+      transform: none;
+      opacity: 1;
+      border: 0;
+      background: transparent;
+      pointer-events: auto;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 2vw, 32px);
+    }
+
+    &__list a {
+      min-height: 44px;
+      border: 0;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    &__list a:hover {
+      color: v.$color-accent;
+    }
+
+    &__toggle {
+      display: none;
+    }
+  }
+}

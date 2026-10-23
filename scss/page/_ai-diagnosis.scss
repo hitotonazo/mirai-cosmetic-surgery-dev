@@ -1,0 +1,40 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixin" as m;
+
+.p-diagnosis {
+  &__intro { display: grid; gap: 20px; }
+  &__unavailable { margin-top: 40px; padding: 24px; text-align: center; border: 1px solid v.$color-line; background: v.$color-ivory; h2 { font-size: 20px; } p { margin-top: 8px; color: v.$color-accent; font-weight: 600; } small { display: block; margin-top: 4px; font-size: 14px; } }
+  &__simulation { background: v.$color-ivory; }
+}
+.p-diagnosis-app { min-height: 520px; padding: clamp(20px,5vw,56px); border: 1px solid v.$color-line; background: v.$color-white;
+  &__progress { margin-bottom: 40px; span { display: block; margin-bottom: 10px; color: v.$color-accent; font-family: v.$font-en; font-size: 14px; letter-spacing: .12em; } div { height: 3px; background: v.$color-line; } i { display: block; height: 100%; background: v.$color-accent; transition: width .25s; } }
+  &__actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 32px; }
+}
+.p-diagnosis-question { display: grid; gap: 12px; padding: 0; border: 0;
+  legend { width: 100%; margin-bottom: 24px; font-size: clamp(22px,4vw,32px); span { display: block; margin-bottom: 4px; color: v.$color-accent; font-family: v.$font-en; font-size: 14px; } }
+  label { cursor: pointer; } input { position: absolute; opacity: 0; pointer-events: none; }
+  label span { display: flex; min-height: 58px; padding: 12px 18px; align-items: center; border: 1px solid v.$color-line; transition: .2s; }
+  input:checked + span { color: v.$color-white; border-color: v.$color-accent; background: v.$color-accent; }
+  input:focus-visible + span { outline: 2px solid v.$color-focus; outline-offset: 3px; }
+}
+.p-diagnosis-analysis { text-align: center;
+  &__icon { display: block; width: 160px; max-width: 40vw; height: auto; margin: 0 auto 40px; object-fit: contain; }
+  h2 { font-size: 28px; } p { margin-top: 10px; }
+  &__bar { height: 6px; margin-top: 28px; overflow: hidden; background: v.$color-line; i { display: block; height: 100%; background: v.$color-accent; transition: width .1s linear; } }
+  strong { display: block; margin-top: 10px; color: v.$color-accent; font-family: v.$font-en; }
+  @media (max-width: 767px) { &__icon { width: 140px; margin-bottom: 32px; } }
+}
+.p-diagnosis-result { scroll-margin-top: 120px; .c-section-heading { margin-bottom: 18px; }
+  &__grid { display: grid; gap: 28px; margin-top: 32px; align-items: center; }
+  img { width: 100%; max-width: 360px; margin: auto; aspect-ratio: 483/543; object-fit: cover; object-position: center top; }
+  dl { margin: 0; border-top: 1px solid v.$color-line; } dl div { display: grid; gap: 4px; padding: 16px 0; border-bottom: 1px solid v.$color-line; } dt { color: v.$color-accent; font-size: 14px; } dd { margin: 0; }
+  > .c-button { margin-top: 32px; }
+  @include m.mq(md) { &__grid { grid-template-columns: minmax(240px,.8fr) minmax(0,1.2fr); gap: 48px; } }
+}
+.p-diagnosis-anomaly { margin-top: 32px; padding: clamp(24px,5vw,44px); text-align: center; border: 1px solid #8f2828; background: #171315; box-shadow: 0 0 24px rgba(143,40,40,.2); animation: anomaly-reveal .35s steps(3);
+  &__label { color: #ddd2d2; font-size: 14px; letter-spacing: .14em; }
+  &__trigger { display: inline-flex; min-height: 48px; margin-top: 12px; padding: 4px 12px; align-items: center; color: #d75d5d; font-size: clamp(32px,7vw,58px); font-weight: 600; text-decoration: none; text-shadow: 0 0 12px rgba(215,93,93,.35); }
+  &__trigger:hover { color: #ff8585; }
+  > p:last-child { margin-top: 14px; color: #ddd2d2; font-size: 14px; }
+}
+@keyframes anomaly-reveal { 0% { opacity: 0; transform: translateX(-4px); filter: blur(2px); } 50% { transform: translateX(5px); } 100% { opacity: 1; transform: none; filter: none; } }

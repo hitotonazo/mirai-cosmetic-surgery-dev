@@ -1,0 +1,25 @@
+@use "../foundation/variables" as v;
+
+.p-news {
+  &__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &__body {
+    display: grid;
+    max-width: 720px;
+    margin: 40px auto 0;
+    gap: 20px;
+  }
+
+  .c-button {
+    margin-top: 12px;
+    justify-self: start;
+  }
+
+  .c-text-link {
+    justify-self: start;
+  }
+}

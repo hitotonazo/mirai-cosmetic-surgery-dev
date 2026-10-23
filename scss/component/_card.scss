@@ -1,0 +1,72 @@
+@use "../foundation/variables" as v;
+
+.c-card {
+  overflow: hidden;
+  border: 1px solid v.$color-line;
+  background: v.$color-white;
+
+  > img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  &__link > img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  &__link:hover h3 {
+    color: v.$color-accent;
+  }
+
+  &__body {
+    display: grid;
+    padding: clamp(20px, 3vw, 32px);
+    gap: 10px;
+  }
+
+  &__label {
+    color: v.$color-accent;
+    font-family: v.$font-en;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+  }
+
+  h3 {
+    font-size: clamp(18px, 2vw, 24px);
+  }
+}
+
+.c-section-heading {
+  max-width: 720px;
+  margin: 0 auto clamp(32px, 5vw, 56px);
+  text-align: center;
+
+  &--left {
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  .c-eyebrow {
+    margin-top: 8px;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.2;
+  }
+
+  h2 {
+    margin-top: 12px;
+    font-size: clamp(18px, 2.4vw, 26px);
+  }
+
+  > p:last-child:not(.c-eyebrow) {
+    margin-top: 16px;
+  }
+}

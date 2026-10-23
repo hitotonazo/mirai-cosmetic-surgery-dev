@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SOCIAL SCORE 最終運用報告書">
+  <title>最終運用報告書｜FIORNEA</title>
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&amp;family=Sorts+Mill+Goudy&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="modules/site-alteration/site-alteration.css">
+  <script src="assets/js/final-report.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="modules/site-alteration/site-alteration.js" defer></script>
+  <script src="modules/site-alteration/debug-panel.js" defer></script>
+  <script src="assets/js/game.js" defer></script>
+</head>
+<body class="p-internal p-final-report is-report-checking">
+  <a class="c-skip-link" href="#main-content">本文へ移動</a>
+  <header class="c-site-header site-header" data-site-header>
+    <div class="c-site-header__inner l-container">
+      <a class="c-site-header__logo" href="index.html" aria-label="FIORNEA トップページ"><img src="assets/images/logo-main.png" width="1880" height="495" alt="FIORNEA 美容皮膚科・美容外科"></a>
+      <nav class="c-site-header__nav" id="global-navigation" aria-label="メインナビゲーション" data-navigation>
+        <ul class="c-site-header__list"><li><a href="index.html">TOP</a></li><li><a href="ai-diagnosis.html">AI顔診断</a></li><li><a href="cases.html">症例紹介</a></li><li><a href="ai-technology.html">AI技術への取り組み</a></li></ul>
+      </nav>
+      <div class="c-site-header__actions"><button class="c-reset" type="button" data-exploration-reset>探索リセット</button><button class="c-site-header__toggle" type="button" aria-controls="global-navigation" aria-expanded="false" aria-label="メニューを開く" data-menu-toggle><span></span><span></span><span></span></button></div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <article class="l-container p-internal__document">
+      <header class="p-internal__header">
+        <p>FINAL OPERATION REPORT／SOCIAL SCORE</p>
+        <h1>最終運用報告書</h1>
+        <span>取扱区分：内部資料／最終確認</span>
+      </header>
+
+      <section class="c-report-section" aria-labelledby="report-01">
+        <p class="c-report-section__number">SECTION 01</p><h2 id="report-01">計画の概要</h2>
+        <p>FIORNEA FACEは、表向きには顔画像から特徴を整理し、美容医療の施術提案を支援するための技術として運用されている。内部では、顔形状の評価を「社会適合度」として数値化し、採用・人材紹介・信用などの社会的機会の配分に用いる仕組みが構築されていた。</p>
+        <p>計画にはFIORNEA DATA SYSTEMS、フィオルネア美容皮膚科・美容外科を中核とする複数の提携医院、および外部評価システムの運営側が関与する。美容医療だけで完結する計画ではない。</p>
+        <div class="p-report-summary"><strong>計画名：顔形状標準化計画</strong><br>FIORNEA FACEとSOCIAL SCOREを接続し、顔の評価、社会的選別、美容医療への誘導を同一の運用循環に組み込む。</div>
+      </section>
+
+      <section class="c-report-section" aria-labelledby="report-02">
+        <p class="c-report-section__number">SECTION 02</p><h2 id="report-02">顔評価データの取得</h2>
+        <p>評価モデルは、以下の経路で顔形状と評価結果を収集・展開する。</p>
+        <div class="p-report-steps" role="list">
+          <div role="listitem">美容クリニックで顔診断・顔形状評価データを収集</div><svg aria-hidden="true" viewBox="0 0 24 38"><path d="M12 2v28m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div role="listitem">複数の提携美容クリニックを通じて施術前後のデータを蓄積</div><svg aria-hidden="true" viewBox="0 0 24 38"><path d="M12 2v28m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div role="listitem">外部の採用・人材紹介システムへ評価モデルを展開</div><svg aria-hidden="true" viewBox="0 0 24 38"><path d="M12 2v28m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div role="listitem">候補者のプロフィール写真などから、顔形状を評価</div>
+        </div>
+        <div class="p-report-warning"><strong>FIORNEA FACEの美容診断を利用していない一般人も評価対象となる。</strong><br>評価対象は美容診断の利用者に限定されず、外部サービス上のプロフィール写真等まで拡張される。</div>
+      </section>
+
+      <section class="c-report-section" aria-labelledby="report-03">
+        <p class="c-report-section__number">SECTION 03</p><h2 id="report-03">社会適合度による選別</h2>
+        <p>SOCIAL SCOREは、人間の実際の能力や信用が顔立ちで決まることを発見したシステムではない。顔形状から一方的に数値を付け、その不当な判定を採用紹介の条件に使用する。</p>
+        <div class="p-report-candidates">
+          <article><img src="images/candidate-a.jpg" alt="候補者A"><h3>候補者A</h3><dl><div><dt>職務能力</dt><dd>94</dd></div><div><dt>社会適合度</dt><dd>28</dd></div><div><dt>システム判定</dt><dd class="is-rejected">紹介対象外</dd></div></dl></article>
+          <article><img src="images/candidate-b.jpg" alt="候補者B"><h3>候補者B</h3><dl><div><dt>職務能力</dt><dd>72</dd></div><div><dt>社会適合度</dt><dd>96</dd></div><div><dt>システム判定</dt><dd>採用推奨</dd></div></dl></article>
+        </div>
+        <p>候補者Aは職務能力94であっても、社会適合度28のため紹介対象から除外される。候補者Bは職務能力72であるが、社会適合度96により採用推奨と判定される。</p>
+      </section>
+
+      <section class="c-report-section" aria-labelledby="report-04">
+        <p class="c-report-section__number">SECTION 04</p><h2 id="report-04">自己強化する評価システム</h2>
+        <p>「再学習」とは、採用や人材紹介の結果を次回の評価モデルに取り込むことを指す。システムは顔と能力の客観的な関係を発見したのではなく、自ら行った差別的な選別結果を学習し、元の評価が正しいように見せている。</p>
+        <div class="p-feedback-loop" role="img" aria-label="顔形状評価から社会的機会の制限とAIの再学習を経て、元の評価が強化される循環図">
+          <div class="p-feedback-loop__steps" role="list">
+            <div role="listitem"><strong>顔形状を評価</strong>FIORNEA FACEが特徴を数値化</div><svg aria-hidden="true" viewBox="0 0 28 34"><path d="M14 2v24m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div role="listitem"><strong>社会適合度を算出</strong>顔形状に評価点を付与</div><svg aria-hidden="true" viewBox="0 0 28 34"><path d="M14 2v24m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div role="listitem"><strong>紹介・採用機会を制限</strong>企業側が低評価者を除外</div><svg aria-hidden="true" viewBox="0 0 28 34"><path d="M14 2v24m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div role="listitem"><strong>社会的実績が蓄積しにくくなる</strong>選択肢の制限が結果の差を生む</div><svg aria-hidden="true" viewBox="0 0 28 34"><path d="M14 2v24m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div role="listitem"><strong>結果をAI学習データへ使用</strong>選別後の実績を再学習</div><svg aria-hidden="true" viewBox="0 0 28 34"><path d="M14 2v24m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div role="listitem"><strong>元の評価が正しいように見える</strong>差別の結果が次の差別を正当化</div>
+          </div>
+          <p class="p-feedback-loop__return">↑ 再学習されたモデルが次の顔形状評価をさらに強化する</p>
+        </div>
+      </section>
+
+      <section class="c-report-section" aria-labelledby="report-05">
+        <p class="c-report-section__number">SECTION 05</p><h2 id="report-05">MODEL-01と美容医療への誘導</h2>
+        <p>MODEL-01は美形や理想的な美人の顔ではない。容姿の優劣とは関係なく、評価制度への適合度が100点になるよう設定された、<strong>特徴が極めて少ない標準顔</strong>である。</p>
+        <div class="p-report-model"><img src="assets/images/model-01.jpg" alt="個性の目立たない標準顔MODEL-01"><div><p>顔形状をMODEL-01へ近づけるほど、システム上の社会適合度は高く評価される。低評価者に対しては、評価改善のための施術として提携美容クリニックを案内する「評価結果連動型施術推奨」が作動する。</p><p>問題は美しい顔を作ることではない。社会的機会を得る条件として、人々に顔の標準化を求めることにある。</p></div></div>
+      </section>
+
+      <section class="c-report-section" aria-labelledby="report-06">
+        <p class="c-report-section__number">SECTION 06</p><h2 id="report-06">計画の目的と利益構造</h2>
+        <p>FIORNEA DATA SYSTEMSの創業者は、当初、外見による不公平を可視化し、差別をなくすための研究を行っていた。しかし、顔の違いがある限り偏見は消えないという結論へ傾き、すべての顔を同じ形状へ近づけるSOCIAL SCOREと顔形状標準化計画を開発した。</p>
+        <p>経営陣は、顔評価が就職や信用に影響すれば美容施術の需要が増えると判断した。社会適合度の低い人物に採用等の不利益を発生させ、その評価を改善する手段として提携美容クリニックへ誘導することで、システム提供側と美容医療側の両方に利益が生じる。</p>
+        <blockquote class="p-report-quote">人間が異なる顔を持つ限り、外見による優劣の判断はなくならない。社会的な評価基準を一つに統一し、すべての人間が同じ基準へ適合することができれば、容姿による不公平は解消される。MODEL-01は、そのための最終的な顔形状モデルである。</blockquote>
+      </section>
+
+      <section class="c-report-section" aria-labelledby="report-07">
+        <p class="c-report-section__number">SECTION 07</p><h2 id="report-07">全国24院への導入計画</h2>
+        <p>共通AIを24院へ導入し、顔形状と施術前後の評価を収集する。フィオルネアは中核施設である。多数の医院には共同研究として説明され、採用選別への転用は認識されていない。</p>
+        <div class="p-facilities" tabindex="0" aria-label="全国24導入施設一覧（横方向にスクロールできます）"><table><thead><tr><th>No</th><th>施設コード</th><th>地域</th><th>導入状態</th></tr></thead><tbody>
+          <tr><td>01</td><td>FC-001</td><td>東京都・都心部</td><td>中核拠点</td></tr><tr><td>02</td><td>FC-002</td><td>東京都・城西部</td><td>運用中</td></tr><tr><td>03</td><td>FC-003</td><td>東京都・城南部</td><td>運用中</td></tr><tr><td>04</td><td>FC-004</td><td>神奈川県</td><td>運用中</td></tr><tr><td>05</td><td>FC-005</td><td>埼玉県</td><td>運用中</td></tr><tr><td>06</td><td>FC-006</td><td>千葉県</td><td>運用中</td></tr><tr><td>07</td><td>FC-007</td><td>茨城県</td><td>運用中</td></tr><tr><td>08</td><td>FC-008</td><td>栃木県</td><td>運用中</td></tr><tr><td>09</td><td>FC-009</td><td>群馬県</td><td>運用中</td></tr><tr><td>10</td><td>FC-010</td><td>北海道</td><td>運用中</td></tr><tr><td>11</td><td>FC-011</td><td>宮城県</td><td>運用中</td></tr><tr><td>12</td><td>FC-012</td><td>福島県</td><td>運用中</td></tr><tr><td>13</td><td>FC-013</td><td>新潟県</td><td>運用中</td></tr><tr><td>14</td><td>FC-014</td><td>石川県</td><td>運用中</td></tr><tr><td>15</td><td>FC-015</td><td>長野県</td><td>運用中</td></tr><tr><td>16</td><td>FC-016</td><td>静岡県</td><td>運用中</td></tr><tr><td>17</td><td>FC-017</td><td>愛知県</td><td>運用中</td></tr><tr><td>18</td><td>FC-018</td><td>京都府</td><td>運用中</td></tr><tr><td>19</td><td>FC-019</td><td>大阪府</td><td>運用中</td></tr><tr><td>20</td><td>FC-020</td><td>兵庫県</td><td>運用中</td></tr><tr><td>21</td><td>FC-021</td><td>岡山県</td><td>運用中</td></tr><tr><td>22</td><td>FC-022</td><td>広島県</td><td>運用中</td></tr><tr><td>23</td><td>FC-023</td><td>福岡県</td><td>運用中</td></tr><tr><td>24</td><td>FC-024</td><td>熊本県</td><td>運用中</td></tr>
+        </tbody></table></div>
+        <p class="p-internal__annotation">※施設名・住所の実在との混同を避けるため、ゲーム内では架空の施設コードと地域のみを使用します。</p>
+      </section>
+
+      <section class="c-report-section" aria-labelledby="report-08">
+        <p class="c-report-section__number">SECTION 08</p><h2 id="report-08">最終運用結果／東京都心部拠点3患者比較</h2>
+        <p>東京都心部の同一拠点FC-001で記録された患者A・B・Cは、それぞれ異なる人物である。施術後の顔形状を同時に比較すると、主要な特徴が共通のMODEL-01へ近づいている。</p>
+        <div class="p-truth-compare" data-truth-compare>
+          <div class="p-truth-compare__grid">
+            <article class="p-truth-compare__card"><div class="p-truth-compare__visual"><img src="assets/images/case-A-before.jpg" data-before="assets/images/case-A-before.jpg" data-after="assets/images/case-A-after.jpg" data-patient="患者A" alt="患者Aの施術前"><svg class="p-truth-compare__guide" viewBox="0 0 100 100" aria-hidden="true"><line x1="8" y1="45" x2="92" y2="45" stroke="currentColor"/><line x1="50" y1="8" x2="50" y2="92" stroke="currentColor"/><line x1="18" y1="68" x2="82" y2="68" stroke="currentColor"/><ellipse cx="50" cy="53" rx="29" ry="38" fill="none" stroke="currentColor"/></svg></div><div class="p-truth-compare__meta"><span>FC-001／東京都・都心部</span><strong>患者A</strong></div></article>
+            <article class="p-truth-compare__card"><div class="p-truth-compare__visual"><img src="assets/images/case-B-before.jpg" data-before="assets/images/case-B-before.jpg" data-after="assets/images/case-B-after.jpg" data-patient="患者B" alt="患者Bの施術前"><svg class="p-truth-compare__guide" viewBox="0 0 100 100" aria-hidden="true"><line x1="8" y1="45" x2="92" y2="45" stroke="currentColor"/><line x1="50" y1="8" x2="50" y2="92" stroke="currentColor"/><line x1="18" y1="68" x2="82" y2="68" stroke="currentColor"/><ellipse cx="50" cy="53" rx="29" ry="38" fill="none" stroke="currentColor"/></svg></div><div class="p-truth-compare__meta"><span>FC-001／東京都・都心部</span><strong>患者B</strong></div></article>
+            <article class="p-truth-compare__card"><div class="p-truth-compare__visual"><img src="assets/images/case-C-before.jpg" data-before="assets/images/case-C-before.jpg" data-after="assets/images/case-C-after.jpg" data-patient="患者C" alt="患者Cの施術前"><svg class="p-truth-compare__guide" viewBox="0 0 100 100" aria-hidden="true"><line x1="8" y1="45" x2="92" y2="45" stroke="currentColor"/><line x1="50" y1="8" x2="50" y2="92" stroke="currentColor"/><line x1="18" y1="68" x2="82" y2="68" stroke="currentColor"/><ellipse cx="50" cy="53" rx="29" ry="38" fill="none" stroke="currentColor"/></svg></div><div class="p-truth-compare__meta"><span>FC-001／東京都・都心部</span><strong>患者C</strong></div></article>
+          </div>
+          <div class="p-truth-compare__action"><button class="c-button c-button--internal" type="button" data-compare-toggle aria-pressed="false">施術後の顔形状を比較する</button></div>
+          <p class="p-truth-compare__status" data-compare-status aria-live="polite">FC-001の患者A・B・Cの施術前画像。</p>
+        </div>
+      </section>
+
+      <section class="c-report-section" aria-labelledby="report-09">
+        <p class="c-report-section__number">SECTION 09</p><h2 id="report-09">MODEL-01／最終運用記録</h2>
+        <div class="p-report-model"><img src="assets/images/model-01.jpg" alt="最終顔形状モデルMODEL-01"><dl><div><dt>評価モデル</dt><dd>MODEL-01</dd></div><div><dt>社会適合度</dt><dd>100／100</dd></div><div><dt>採用評価</dt><dd>最優先</dd></div><div><dt>全国導入施設数</dt><dd>24院</dd></div><div><dt>外部企業向け評価システム</dt><dd>運用中</dd></div><div><dt>美容医療施術推奨システム</dt><dd>連動済</dd></div><div><dt>社会的実績による再学習</dt><dd>継続中</dd></div><div><dt>顔形状標準化計画</dt><dd class="is-emphasis">進行中</dd></div></dl></div>
+      </section>
+
+      <section class="c-report-section p-report-ending" aria-labelledby="ending-title">
+        <div class="p-report-ending__content"><p class="p-report-ending__id">ENDING／MODEL-01／ASSESSMENT SCOPE: EXPANDING</p><h2 id="ending-title">最終記録</h2><div class="p-report-ending__face"><img src="assets/images/model-01.jpg" alt="社会全体への拡張対象として表示されたMODEL-01"></div><p class="p-report-ending__statement">すべての人間が同じ顔になったとき、人類は初めて外見による差別から解放される。</p><p class="p-report-ending__copy">あなたらしい美しさを、もっと未来へ。</p><div class="p-report-ending__share"><a class="c-button c-button--internal" href="https://twitter.com/intent/tweet?text=%E3%80%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%82%89%E3%81%97%E3%81%84%E7%BE%8E%E3%81%97%E3%81%95%E3%82%92%E3%80%81%E3%82%82%E3%81%A3%E3%81%A8%E6%9C%AA%E6%9D%A5%E3%81%B8%E3%80%82%E3%80%8D%0A%0A%23%E3%81%8A%E3%81%8B%E3%81%97%E3%81%AA%E3%82%B5%E3%82%A4%E3%83%88%0A%0Ahttps%3A%2F%2Fx.com%2FARG_ObserverX" target="_blank" rel="noopener noreferrer">調査を報告する</a><a class="c-button c-button--internal p-report-ending__top" href="index.html">TOPへ戻る</a></div></div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="c-site-footer site-footer"><div class="c-site-footer__inner l-container"><a class="c-site-footer__logo" href="index.html"><img src="assets/images/logo-main.png" width="1880" height="495" alt="FIORNEA 美容皮膚科・美容外科"></a><nav class="c-site-footer__nav" aria-label="フッターナビゲーション"><ul><li><a href="index.html">TOP</a></li><li><a href="ai-diagnosis.html">AI顔診断</a></li><li><a href="cases.html">症例紹介</a></li><li><a href="ai-technology.html">AI技術への取り組み</a></li></ul></nav><p class="c-site-footer__notice">※このWebサイトの内容はフィクションであり、実在の人物・団体とは一切関係ありません。</p><p class="c-site-footer__copyright"><small>©ぺいぽぴー</small></p></div></footer>
+</body>
+</html>

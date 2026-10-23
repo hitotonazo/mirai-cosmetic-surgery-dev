@@ -1,0 +1,33 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixin" as m;
+.p-cases { &__intro { max-width: 760px; margin: 0 auto 56px; text-align: center; h2 { font-size: clamp(24px,4vw,36px); } p { margin-top: 18px; } } &__grid { display: grid; gap: 24px; @include m.mq(md) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; } } }
+.c-case-card { overflow: hidden; border: 1px solid v.$color-line; background: v.$color-white;
+  &__heading { padding: 22px; }
+  &__heading p { color: v.$color-accent; font-family: v.$font-en; font-size: 14px; letter-spacing: .12em; }
+  &__heading h2 { margin-top: 6px; font-size: 20px; }
+  &__comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid v.$color-line; }
+  figure { position: relative; margin: 0; overflow: hidden; }
+  figure + figure { border-left: 1px solid v.$color-line; }
+  img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center top; }
+  figcaption { position: absolute; right: 8px; bottom: 8px; min-width: 64px; padding: 5px 9px; color: v.$color-text; background: rgba(v.$color-white, .9); font-family: v.$font-en; font-size: 14px; line-height: 1.4; text-align: center; }
+  figure.is-case-glitching::after { position: absolute; z-index: 2; inset: 0; content: ""; background: repeating-linear-gradient(0deg,rgba(255,255,255,.08) 0 2px,rgba(40,0,0,.5) 2px 5px),linear-gradient(90deg,rgba(255,0,55,.35),transparent 35%,rgba(0,220,255,.3)); pointer-events: none; animation: case-noise .12s steps(2,end) infinite; }
+}
+.p-cases-phase2 { margin-top: 64px; text-align: center;
+  &__trigger { min-width: min(100%, 320px); }
+  .p-cases-anomaly { text-align: left; }
+}
+.p-cases-anomaly { --comparison-position: 0%; margin-top: 80px; padding: clamp(24px,5vw,56px); border: 1px solid #9a4646; background: #211b1c;
+  .c-section-heading { color: #f0e8e6; }
+  &__faces { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; @include m.mq(md) { grid-template-columns: repeat(5,minmax(0,1fr)); } }
+  figure { margin: 0; color: #e8dfdd; }
+  &__image { position: relative; overflow: hidden; aspect-ratio: 1; background: #111; }
+  &__image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  &__after { clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0); }
+  figcaption { margin-top: 7px; font-family: v.$font-en; font-size: 14px; text-align: center; }
+  &__control { max-width: 760px; margin: 36px auto 0; color: #e8dfdd; }
+  &__control > div { display: flex; justify-content: space-between; font-size: 14px; }
+  input[type="range"] { width: 100%; min-height: 44px; accent-color: #bd5454; cursor: ew-resize; }
+  &__detected { margin-top: 28px; text-align: center; color: #e8dfdd; }
+  &__detected a { display: inline-flex; min-height: 48px; margin-top: 12px; padding: 8px 18px; align-items: center; color: #ef7777; border: 1px solid #bd5454; font-size: clamp(22px,4vw,34px); text-decoration: none; }
+}
+@keyframes case-noise { 0% { transform: translate(0); filter: contrast(1); } 25% { transform: translate(-3px,2px); filter: contrast(2); } 50% { transform: translate(3px,-2px); } 75% { transform: translate(-2px,-1px); } 100% { transform: translate(2px,2px); } }

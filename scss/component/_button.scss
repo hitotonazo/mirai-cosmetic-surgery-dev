@@ -1,0 +1,77 @@
+@use "../foundation/variables" as v;
+
+.c-button,
+.c-reset {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 10px 24px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid v.$color-accent;
+  border-radius: 24px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.c-button.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.68;
+}
+
+.c-button {
+  color: v.$color-white;
+  background: v.$color-accent;
+
+  &:hover {
+    color: v.$color-accent;
+    background: transparent;
+  }
+
+  &--secondary {
+    color: v.$color-accent;
+    background: transparent;
+
+    &:hover {
+      color: v.$color-white;
+      background: v.$color-accent;
+    }
+  }
+
+  &--text {
+    min-height: 44px;
+    padding-inline: 0;
+    color: v.$color-text;
+    border-color: transparent;
+    border-radius: 0;
+    background: transparent;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+  }
+}
+
+.c-reset {
+  min-width: 0;
+  min-height: 44px;
+  padding-inline: 12px;
+  color: v.$color-text;
+  border-color: v.$color-line;
+  background: transparent;
+  white-space: nowrap;
+
+  &:hover {
+    color: v.$color-white;
+    border-color: v.$color-accent;
+    background: v.$color-accent;
+  }
+}
+
+@media (max-width: 374px) {
+  .c-reset {
+    padding-inline: 8px;
+    font-size: 14px;
+  }
+}

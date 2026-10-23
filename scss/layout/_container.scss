@@ -1,0 +1,46 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixin" as m;
+
+.l-container {
+  width: 100%;
+  max-width: calc(v.$container-width + 40px);
+  margin-inline: auto;
+  padding-inline: 20px;
+
+  @include m.mq(md) {
+    max-width: calc(v.$container-width + 80px);
+    padding-inline: 40px;
+  }
+}
+
+.l-container--reading {
+  max-width: calc(v.$reading-width + 40px);
+
+  @include m.mq(md) {
+    max-width: calc(v.$reading-width + 80px);
+  }
+}
+
+.l-section {
+  padding-block: v.$space-section-medium-sp;
+
+  &--large {
+    padding-block: v.$space-section-large-sp;
+  }
+
+  &--small {
+    padding-block: v.$space-section-small-sp;
+  }
+
+  @include m.mq(lg) {
+    padding-block: v.$space-section-medium;
+
+    &--large {
+      padding-block: v.$space-section-large;
+    }
+
+    &--small {
+      padding-block: v.$space-section-small;
+    }
+  }
+}
