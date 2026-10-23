@@ -43,7 +43,14 @@
       if (event.altKey && event.shiftKey && event.code === 'KeyA') { event.preventDefault(); play(); }
       if (event.altKey && event.shiftKey && event.code === 'KeyD') { event.preventDefault(); if (!panel) create(); setVisible(panel?.hidden ?? true); }
     });
-    document.addEventListener('DOMContentLoaded', create);
+    // init() may itself be called from a DOMContentLoaded handler. In that case,
+    // waiting for the same event again would prevent the panel from ever being
+    // created, so create it immediately once the DOM is ready.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', create, { once: true });
+    } else {
+      create();
+    }
     return { isEnabled: enabled, show: () => { create(); setVisible(true); }, hide: () => setVisible(false), destroy: () => panel?.remove() };
   };
   window.SiteAlterationDebug = { init };
