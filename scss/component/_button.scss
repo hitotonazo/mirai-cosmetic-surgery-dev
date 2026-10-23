@@ -69,16 +69,9 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 374px) {
   .c-reset {
-    width: 44px;
-    padding-inline: 0;
-    font-size: 0;
-
-    &::before {
-      content: "↻";
-      font-size: 22px;
-      line-height: 1;
-    }
+    padding-inline: 8px;
+    font-size: 14px;
   }
 }
