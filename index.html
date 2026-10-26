@@ -32,6 +32,7 @@
                     <li><a href="ai-diagnosis.html">AI顔診断</a></li>
                     <li><a href="cases.html">症例紹介</a></li>
                     <li><a href="ai-technology.html">AI技術への取り組み</a></li>
+                    <li><a href="price.html">料金案内</a></li>
                 </ul>
             </nav>
             <div class="c-site-header__actions"><button class="c-reset" type="button"
@@ -65,7 +66,7 @@
                             <p>写真を使用せずに体験できる診断についてご紹介します。</p>
                         </div></a>
                     </article>
-                    <article class="c-card c-card--media" data-anomaly-normal="phase3"><a class="c-card__link" href="news-ai-technology.html"><img src="assets/images/info-card-02.jpg"
+                    <article class="c-card c-card--media"><a class="c-card__link" href="news-ai-technology.html"><img src="assets/images/info-card-02.jpg"
                             alt="落ち着いたカウンセリングスペース">
                         <div class="c-card__body">
                             <p class="c-card__label">INFORMATION</p>
@@ -73,15 +74,10 @@
                             <p>カウンセリングを支える技術の考え方をご案内します。</p>
                         </div></a>
                     </article>
-                    <article class="c-card c-card--media p-home-info-leak" data-anomaly-panel="phase3" hidden><a class="c-card__link" href="external-link-log.html" data-anomaly-link="phase3">
-                        <div class="p-home-info-leak__thumbnail"><img src="images/info-card-hr-leak.jpg" alt="採用候補者管理システムの同期エラー画面"><span>HR-024 / CANDIDATE MANAGEMENT</span><i>SYNC ERROR</i></div>
-                        <div class="c-card__body">
-                            <p class="c-card__label">INFORMATION</p>
-                            <h3>候補者評価データの同期エラー</h3>
-                            <p>外部連携中の採用候補者情報が一時的に表示されています。</p>
-                            <dl><div><dt>EXTERNAL CLIENT</dt><dd>HR-024</dd></div><div><dt>候補者ID</dt><dd>AP-00631</dd></div><div><dt>職務適性</dt><dd>A</dd></div><div><dt>社会適合度</dt><dd>29 / 100</dd></div><div><dt>紹介ステータス</dt><dd>紹介保留</dd></div></dl>
-                        </div></a>
-                    </article>
+                    <a class="p-home-system-notice" href="external-link-log.html" data-anomaly-panel="phase3" data-anomaly-link="phase3" hidden>
+                        <span class="p-home-system-notice__icon" aria-hidden="true">!</span>
+                        <span class="p-home-system-notice__content"><span class="p-home-system-notice__label">SYSTEM NOTICE / ACCESS CONTROL</span><strong>外部連携ログの公開設定に関する警告</strong><span>外部連携ログが公開設定になっていることを検出しました。管理者は直ちに非公開設定へ変更してください。</span><span class="p-home-system-notice__link">外部連携ログを確認</span></span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -155,18 +151,18 @@
                     <h2 id="guide-title">クリニックガイド</h2>
                 </div>
                 <div class="p-home-guide">
-                    <article class="c-card"><img src="assets/images/doctor-portrait.jpg" alt="白衣を着た女性医師" loading="lazy" decoding="async">
+                    <article class="c-card"><a class="c-card__link" href="#doctor"><img src="assets/images/doctor-portrait.jpg" alt="白衣を着た女性医師" loading="lazy" decoding="async">
                         <div class="c-card__body">
                             <p class="c-card__label">DOCTOR</p>
                             <h3>医師紹介</h3>
-                        </div>
+                        </div></a>
                     </article>
-                    <article class="c-card" id="price"><img src="assets/images/price-counseling.jpg" loading="lazy" decoding="async"
+                    <article class="c-card"><a class="c-card__link" href="price.html"><img src="assets/images/price-counseling.jpg" loading="lazy" decoding="async"
                             alt="タブレットを使ったカウンセリング">
                         <div class="c-card__body">
                             <p class="c-card__label">PRICE</p>
                             <h3>料金案内</h3>
-                        </div>
+                        </div></a>
                     </article>
                     <article class="c-card"><img src="assets/images/case-thumb.jpg" alt="症例紹介のイメージ" loading="lazy" decoding="async">
                         <div class="c-card__body">
@@ -175,12 +171,35 @@
                             <p>共同研究で提供された症例をご紹介します。</p><a class="c-text-link" href="cases.html">症例紹介を見る</a>
                         </div>
                     </article>
-                    <article class="c-card"><img src="assets/images/faq-staff.jpg" alt="笑顔で案内するクリニックスタッフ" loading="lazy" decoding="async">
+                    <article class="c-card"><a class="c-card__link" href="#faq"><img src="assets/images/faq-staff.jpg" alt="笑顔で案内するクリニックスタッフ" loading="lazy" decoding="async">
                         <div class="c-card__body">
                             <p class="c-card__label">FAQ</p>
                             <h3>よくあるご質問</h3>
-                        </div>
+                        </div></a>
                     </article>
+                </div>
+            </div>
+        </section>
+        <section class="l-section p-home-doctor" id="doctor" aria-labelledby="doctor-title">
+            <div class="l-container p-home-doctor__grid">
+                <div class="p-home-doctor__portrait"><img src="assets/images/doctor-portrait.jpg" alt="白衣を着た女性医師" loading="lazy" decoding="async"></div>
+                <div class="p-home-doctor__content"><div class="c-section-heading c-section-heading--left"><p class="c-eyebrow">DOCTOR</p><h2 id="doctor-title">医師紹介</h2></div>
+                    <p>当院では、お一人おひとりのご希望やお悩みを丁寧に伺い、自然な変化を大切にした美容医療をご提案しています。</p>
+                    <p>AIによる顔の特徴分析も参考にしながら、患者様ご自身のご希望を尊重した施術計画を検討します。</p>
+                    <p>診断結果だけで施術を決定することはなく、医師による診察とカウンセリングを通じて、一人ひとりに適した方法をご案内します。</p>
+                    <dl><div><dt>診療方針</dt><dd>自然な変化と、ご本人の希望を大切にしたご提案</dd></div><div><dt>ご相談分野</dt><dd>目元・鼻・輪郭・肌治療</dd></div><div><dt>カウンセリング</dt><dd>お悩みやご希望を丁寧に伺い、施術方法と注意点をご説明</dd></div><div><dt>AI診断の活用</dt><dd>医師の診察を補助する参考情報として活用</dd></div></dl>
+                </div>
+            </div>
+        </section>
+        <section class="l-section p-home-faq" id="faq" aria-labelledby="faq-title">
+            <div class="l-container"><div class="c-section-heading"><p class="c-eyebrow">FAQ</p><h2 id="faq-title">よくあるご質問</h2></div>
+                <div class="p-home-faq__list">
+                    <details><summary>初回カウンセリングでは何を行いますか？</summary><div><p>お悩みやご希望を伺い、医師が現在の状態を確認したうえで、考えられる施術方法や注意点についてご説明します。</p></div></details>
+                    <details><summary>AI顔診断は無料で利用できますか？</summary><div><p>写真を使用しないシミュレーション診断は無料でお試しいただけます。表示される内容はイメージに基づく簡易的な結果です。</p></div></details>
+                    <details><summary>顔写真をアップロードせずに診断できますか？</summary><div><p>はい。シミュレーション診断では、顔写真をアップロードせずに複数の質問へ回答することで、顔タイプのイメージをご確認いただけます。</p></div></details>
+                    <details><summary>AI顔診断の結果だけで施術内容は決まりますか？</summary><div><p>いいえ。AI顔診断はカウンセリングを補助する参考情報です。実際の施術内容は、医師による診察と患者様のご希望を踏まえて検討します。</p></div></details>
+                    <details><summary>施術後のダウンタイムはどの程度ですか？</summary><div><p>ダウンタイムの程度や期間は施術内容や個人差によって異なります。詳しくは診察・カウンセリング時にご説明します。</p></div></details>
+                    <details><summary>カウンセリング当日に施術を受ける必要はありますか？</summary><div><p>いいえ。カウンセリング後に施術を受けるかどうかをご検討いただけます。十分に納得されたうえでご判断ください。</p></div></details>
                 </div>
             </div>
         </section>
@@ -245,6 +264,7 @@
                     <li><a href="ai-diagnosis.html">AI顔診断</a></li>
                     <li><a href="cases.html">症例紹介</a></li>
                     <li><a href="ai-technology.html">AI技術への取り組み</a></li>
+                    <li><a href="price.html">料金案内</a></li>
                 </ul>
             </nav>
             <p class="c-site-footer__notice">※このWebサイトの内容はフィクションであり、実在の人物・団体とは一切関係ありません。</p>

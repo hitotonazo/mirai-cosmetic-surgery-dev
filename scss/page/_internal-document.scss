@@ -27,3 +27,14 @@
 }
 .p-internal__document > .c-button { margin-top: 20px; }
 .c-button--internal { color: #f0e8e8; border-color: #8e4646; background: #6f3030; }
+.p-log-scope {
+  > header > p:last-child { color: #b8bbc0; }
+  dl { margin: 28px 0; border: 1px solid #3b4148; }
+  dl div { display: grid; grid-template-columns: minmax(150px,.8fr) 1fr; border-bottom: 1px solid #3b4148; }
+  dl div:last-child { border-bottom: 0; }
+  dt, dd { padding: 14px 16px; }
+  dt { color: #bfc2c5; background: #1b2026; }
+  dd { margin: 0; background: #171a1f; }
+  .is-emphasis { color: #f07b75; font-size: 18px; }
+  @media (max-width: 520px) { dl div { grid-template-columns: 1fr; } dd { padding-top: 0; } .c-button { width: 100%; } }
+}

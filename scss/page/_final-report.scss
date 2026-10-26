@@ -48,7 +48,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 28px;
+  margin: 28px 0 32px;
 
   article { overflow: hidden; padding: 0; border: 1px solid #3b4148; background: #171a1f; }
   img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center top; }

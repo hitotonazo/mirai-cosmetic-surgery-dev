@@ -36,8 +36,8 @@
       button.setAttribute('aria-pressed', String(afterVisible));
       button.textContent = afterVisible ? '施術前の顔形状に戻す' : '施術後の顔形状を比較する';
       status.textContent = afterVisible
-        ? '東京都心部の同一拠点で記録された3患者の顔形状が、同じMODEL-01へ近づいている。'
-        : 'FC-001の患者A・B・Cの施術前画像。';
+        ? '出身地域や施術前の顔立ちが異なる3人が、同じ標準顔形状MODEL-01へ近づいている。'
+        : '東京都・愛知県・大阪府の代表3医院における施術前画像。';
       window.setTimeout(() => comparison.classList.remove('is-switching'), reduced.matches ? 0 : 360);
     });
   });

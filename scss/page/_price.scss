@@ -1,0 +1,33 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixin" as m;
+.p-price {
+  &__intro { padding-bottom: 0; }
+  &__intro p + p { margin-top: 18px; }
+  &__menus { padding-top: clamp(56px,8vw,96px); }
+  &__notes { background: v.$color-ivory; }
+  &__notes h2 { margin-bottom: 24px; font-size: clamp(24px,4vw,32px); }
+  &__notes ul { display: grid; padding-left: 1.4em; gap: 12px; }
+  &__counseling-grid { display: grid; align-items: center; gap: 32px; }
+  &__counseling img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  &__counseling h2 { margin: 8px 0 20px; font-size: clamp(24px,4vw,36px); }
+  &__counseling p + p { margin-top: 16px; }
+  @include m.mq(md) { &__counseling-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(48px,7vw,88px); } }
+}
+.p-price-tabs {
+  &__list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; margin-bottom: 28px; }
+  &__list button { min-height: 52px; padding: 10px 12px; color: v.$color-text; border: 1px solid v.$color-line; background: v.$color-white; font: inherit; font-size: 14px; cursor: pointer; }
+  &__list button[aria-selected="true"] { color: v.$color-white; border-color: v.$color-accent; background: v.$color-accent; }
+  &__list button:focus-visible { outline: 2px solid v.$color-accent; outline-offset: 3px; }
+  &__panel { padding: clamp(20px,4vw,40px); border: 1px solid v.$color-line; background: v.$color-white; }
+  &__panel[hidden] { display: none; }
+  &__panel h3 { font-size: clamp(22px,4vw,30px); }
+  &__panel > p { margin-top: 12px; }
+  table { width: 100%; margin-top: 28px; border-collapse: collapse; table-layout: fixed; }
+  th, td { padding: 16px; border-bottom: 1px solid v.$color-line; text-align: left; overflow-wrap: anywhere; }
+  th { color: #725b57; background: v.$color-ivory; font-size: 14px; }
+  th:last-child, td:last-child { width: 34%; text-align: right; white-space: nowrap; }
+  @include m.mq(md) { &__list { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; } &__list button { min-height: 58px; font-size: 15px; } }
+  @media (max-width: 420px) { th, td { padding: 14px 10px; } th:last-child, td:last-child { width: 38%; } }
+}
+.no-js .p-price-tabs__list { display: none; }
+.no-js .p-price-tabs__panel + .p-price-tabs__panel { margin-top: 24px; }

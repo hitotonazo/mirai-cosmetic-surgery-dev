@@ -145,7 +145,7 @@
     &__list {
       display: flex;
       align-items: center;
-      gap: clamp(16px, 2vw, 32px);
+      gap: clamp(12px, 1.5vw, 24px);
     }
 
     &__list a {
